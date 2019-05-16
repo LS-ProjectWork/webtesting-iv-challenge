@@ -5,7 +5,9 @@ describe('GET /', () => {
     it('should return 200 status', () => {
         return request(server)
             .get('/')
-            .expect(200)
+            .then(res => {
+                expect(res.status).toBe(200)
+            })
     })
 })
 
