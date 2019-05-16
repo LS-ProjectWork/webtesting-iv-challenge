@@ -21,7 +21,8 @@ describe('POST /states', () => {
         return request(server)
             .post('/')
             .then(res => {
-                expect(res.body).toBe('application/json')
+                expect(res.type).toBe('application/json')
             })
     })
+
 })
