@@ -17,4 +17,11 @@ describe('POST /states', () => {
                 expect(res.status).toBe(200)
             })
     })
+    it('should return JSON', () => {
+        return request(server)
+            .post('/')
+            .then(res => {
+                expect(res.body).toBe('application/json')
+            })
+    })
 })
