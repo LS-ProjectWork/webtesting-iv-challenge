@@ -12,4 +12,12 @@ server.get('/', (req, res) => {
     res.status(200).send('Hello World')
 })
 
+server.post('/', async (req, res) => {
+    await db('states')
+        .insert(req.body)
+        .then(state => {
+            res.status(200).json(state)
+        })
+})
+
 module.exports = server;
