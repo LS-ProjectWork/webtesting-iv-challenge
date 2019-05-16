@@ -35,14 +35,16 @@ describe('POST /', () => {
 describe('DELETE /', () => {
     it('should return 200 status', () => {
         return request(server)
-            .delete('/')
+            .delete('/:id')
+            .send({id: 1})
             .then(res => {
                 expect(res.status).toBe(200)
             })
     })
     it('should return JSON', () => {
         return request(server)
-            .delete('/')
+            .delete('/:id')
+            .send({id: 1})
             .then(res => {
                 expect(res.type).toBe('application/json')
             })
