@@ -8,3 +8,13 @@ describe('GET /', () => {
             .expect(200)
     })
 })
+
+describe('POST /states', () => {
+    it('should return 200 status', () => {
+        return request(server)
+            .post('/')
+            .then(res => {
+                expect(res.status).toBe(200)
+            })
+    })
+})
