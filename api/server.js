@@ -20,4 +20,13 @@ server.post('/', async (req, res) => {
         })
 })
 
+server.delete('/:id', async (req, res) => {
+    await db('states')
+        .where(req.params)
+        .del()
+        .then(state => {
+            res.status(200).json(state)
+        })
+})
+
 module.exports = server;
