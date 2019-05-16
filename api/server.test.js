@@ -9,7 +9,7 @@ describe('GET /', () => {
     })
 })
 
-describe('POST /states', () => {
+describe('POST /', () => {
     it('should return 200 status', () => {
         return request(server)
             .post('/')
@@ -24,5 +24,21 @@ describe('POST /states', () => {
                 expect(res.type).toBe('application/json')
             })
     })
+})
 
+describe('DELETE /', () => {
+    it('should return 200 status', () => {
+        return request(server)
+            .delete('/')
+            .then(res => {
+                expect(res.status).toBe(200)
+            })
+    })
+    it('should return JSON', () => {
+        return request(server)
+            .delete('/')
+            .then(res => {
+                expect(res.type).toBe('application/json')
+            })
+    })
 })
