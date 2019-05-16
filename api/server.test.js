@@ -13,15 +13,19 @@ describe('GET /', () => {
 
 describe('POST /', () => {
     it('should return 200 status', () => {
+        const state = {state: 'Georgia'}
         return request(server)
             .post('/')
+            .send(state)
             .then(res => {
                 expect(res.status).toBe(200)
             })
     })
     it('should return JSON', () => {
+        const state = {state: 'Florida'}
         return request(server)
             .post('/')
+            .send(state)
             .then(res => {
                 expect(res.type).toBe('application/json')
             })
